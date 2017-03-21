@@ -1,0 +1,281 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0;
+    background: #ffffff;
+    color: #ff5252;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+
+.browserupgrade a {
+    color: #ff5252;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.browserupgrade a:hover {
+    color: #fba4a4;
+    text-decoration: none
+}
+
+
+/* ===================== =====================================================
+   Author's custom styles
+   ========================================================================== */
+
+html {
+    overflow-x: hidden;
+    background: #000;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+p {
+    margin: 1em 0;
+    font-size: small;
+    line-height: 1.4em;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    font-style: italic;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.background-dots {
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    /*-webkit-animation: background 1s;*/
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    top: 0;
+    position: fixed;
+}
+
+.blue-block h1 {
+    font-size: 1.3em;
+    margin: 0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 25px;
+    letter-spacing: 0rem;
+}
+
+.blue-block {
+    width: 50%;
+    margin: 100vh auto 0 auto;
+    padding: 32px;
+    background: blue;
+    text-align: center;
+    z-index: 5;
+    position: relative;
+}
+
+.clear-block {
+    width: 100%;
+    margin: 100vh auto 0 auto;
+    padding: 32px;
+    background: transparent;
+    text-align: center;
+    z-index: 5;
+    position: relative;
+}
+
+.fade-in-black {
+    height: 130vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    z-index: 1;
+}
+
+#filedrag {
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 5em 0;
+    margin: 1em 0;
+    color: #fff;
+    border: 2px dashed #fff;
+    border-radius: 0px;
+    cursor: default;
+    transition: all 0.3s;
+    font-size: 0.7rem;
+}
+
+#filedrag.hover {
+    color: blue;
+    border-color: #fff;
+    background: #fff;
+    border-style: solid;
+}
+
+#filedrag.uploaded {
+    color: blue;
+    border-color: #fff;
+    border-style: solid;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 203% 200%;
+    animation: AnimationName 3s ease;
+    animation-fill-mode: both;
+    padding: 0.3em 0;
+}
+
+#fileselect {
+    display: none;
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    10% {
+        background-position: 0% 50%
+    }
+    100% {
+        background-position: -98% 50%
+    }
+}
+
+button.secondary {
+    font-family: 'Lato';
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    -webkit-appearance: none;
+    transition: all 0.25s ease-in-out;
+    vertical-align: middle;
+    border: 1px solid white;
+    padding: .85em 1em;
+    margin: 0 0 1rem;
+    font-size: .5rem;
+    background-color: blue;
+    color: white;
+    outline: none;
+    cursor: default;
+    border-radius: 0;
+    width: 40%;
+    transition: 0.3s all;
+}
+
+button.secondary:hover {
+    background-color: #fff;
+    color: blue;
+}
+
+#chart {
+    width: 100%;
+}
