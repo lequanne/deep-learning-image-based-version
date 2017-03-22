@@ -54,7 +54,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
     // output file information
     function ParseFile(file) {
         var d = document.getElementById("filedrag");
-        d.className += " uploaded";
+        d.className += "uploaded";
         d.innerHTML = "Loading...";
         setTimeout(function() {
             Output(
@@ -211,4 +211,96 @@ $('#chart').waypoint(function() {
     force.start();
 }, {
     offset: '70%'
+});
+
+
+$('#filedrag').click(function() {
+
+    disable_scroll();
+
+    $('html, body').stop().animate({ scrollTop: $("#chart").offset().top - 200 }, 700, function() {
+        enable_scroll();
+    });
+});
+
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+    preventDefault(e);
+}
+
+function disable_scroll() {
+    if (window.addEventListener) {
+        window.addEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = wheel;
+    document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+}
+
+var diagram = new SimpleDiagram('#perceptron-1', {
+    addGrid: false,
+    cellSize: 35,
+    numColumns: 15,
+    numRows: 1,
+    margin: 50,
+    interactive: false
+});
+
+var nodes = [
+    { name: 'A', row: 1, column: 1, connectsTo: 'B' },
+    { name: 'B', row: 1, column: 8, connectsTo: 'C' },
+    { name: 'C', row: 1, column: 15 }
+];
+
+// Draw the nodes!
+
+nodes.forEach(function(node) {
+
+    diagram.addNode({
+        name: node.name,
+        label: node.name,
+        row: node.row,
+        column: node.column
+    });
+
+});
+
+// Draw the links!
+
+nodes.forEach(function(node) {
+
+    if (!node.connectsTo)
+        return;
+
+    diagram.addLine({
+        from: node.name,
+        to: node.connectsTo
+    });
+
 });
