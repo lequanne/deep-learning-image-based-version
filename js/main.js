@@ -369,3 +369,7 @@ nodes.forEach(function(node) {
     });
 
 });
+
+$( ".slider-control" ).click(function() {
+  $(this).parent().toggleClass( "slid" )
+});
