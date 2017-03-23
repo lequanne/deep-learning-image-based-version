@@ -1,0 +1,64 @@
+svg.simple-diagram {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+svg.simple-diagram .node .node-shape {
+    stroke: none;
+    fill: #fff;
+    stroke-width: 1px;
+}
+
+svg.simple-diagram .node .square {
+    shape-rendering: crispEdges;
+}
+
+svg.simple-diagram .node.active .node-shape {
+    fill: rgb(255, 225, 225);
+}
+
+svg.simple-diagram .box {
+    fill: rgb(230, 237, 255);
+    fill-opacity: 0.5;
+    stroke: #999;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+svg.simple-diagram .node .label {
+    cursor: default;
+    stroke: none;
+    font-size: 12px;
+    color: #fff;
+    fill: #fff;
+    font-family: 'Roboto Mono', monospace;
+}
+
+svg.simple-diagram .subscript,
+svg.simple-diagram .superscript {
+    font-size: 0.8em;
+}
+
+svg.simple-diagram marker#arrow {
+    fill: #fff;
+}
+
+svg.simple-diagram .line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+svg.simple-diagram .grid {
+    stroke: #fff;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.simple-diagram-tooltip {
+    padding: 8px;
+    font-size: 12px;
+    width: 280px;
+    border: 1px solid rgb(214, 211, 132);
+    background-color: rgb(255, 250, 226);
+    opacity: 0.9
+}
