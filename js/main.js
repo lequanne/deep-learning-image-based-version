@@ -293,13 +293,13 @@ var diagram = new SimpleDiagram('#perceptron-1', {
     numColumns: 15,
     numRows: 1,
     margin: 50,
-    interactive: false
+    interactive: true
 });
 
 var nodes = [
-    { name: 'Input', row: 1, column: 1, connectsTo: 'Hidden Layer' },
-    { name: 'Hidden Layer', row: 1, column: 8, connectsTo: 'Output' },
-    { name: 'Output', row: 1, column: 15 }
+    { name: 'Input', row: 1, column: 1, connectsTo: 'Hidden Layer', hoverText: "The input in the case of a perceptron is usually a number", },
+    { name: 'Hidden Layer', row: 1, column: 8, connectsTo: 'Output', hoverText: "The hidden layers job is to transform the input in some way. This can be as simple as multiplication but is often far more complex", },
+    { name: 'Output', row: 1, column: 15, hoverText: "The output", }
 ];
 
 // Draw the nodes!
@@ -310,7 +310,8 @@ nodes.forEach(function(node) {
         name: node.name,
         label: node.name,
         row: node.row,
-        column: node.column
+        column: node.column,
+        hoverText: node.hoverText
     });
 
 });
@@ -339,9 +340,9 @@ var diagram = new SimpleDiagram('#perceptron-2', {
 });
 
 var nodes = [
-    { name: '2', row: 1, column: 1, connectsTo: '3' },
-    { name: '3', row: 1, column: 8, connectsTo: '6' },
-    { name: '6', row: 1, column: 15 }
+    { name: '2', row: 1, column: 1, connectsTo: 'x3', class: "big" },
+    { name: 'x3', row: 1, column: 8, connectsTo: '6', class: "big" },
+    { name: '6', row: 1, column: 15, class: "big" }
 ];
 
 // Draw the nodes!
@@ -352,7 +353,8 @@ nodes.forEach(function(node) {
         name: node.name,
         label: node.name,
         row: node.row,
-        column: node.column
+        column: node.column,
+        class: node.class
     });
 
 });

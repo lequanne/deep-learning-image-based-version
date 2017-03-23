@@ -58,7 +58,15 @@ svg.simple-diagram .grid {
     padding: 8px;
     font-size: 12px;
     width: 280px;
-    border: 1px solid rgb(214, 211, 132);
-    background-color: rgb(255, 250, 226);
-    opacity: 0.9
+    border: 1px solid #fff;
+    background-color: #fff;
+    opacity: 1;
+    color: blue;
+}
+
+.label.big {
+    font-size: 17px!important;
+    fill: blue!important;
+    font-family: 'Lato'!important;
+    transform: translateY(36px)!important;
 }
