@@ -1,10 +1,31 @@
 //Scroll stars
-$(window).scroll(function() {
-    scroll = -((jQuery(window).scrollTop() / 3));
-    $(".scoll").each(function() {
-        $(this).css("background-position-y", scroll / $(this).data("scroll-speed"))
-    });
+$(".scoll").each(function() {
+    $(this).css('height', $(document).height());
+
 });
+
+var didScroll = false;
+
+window.onscroll = doThisStuffOnScroll;
+
+function doThisStuffOnScroll() {
+    didScroll = true;
+}
+
+setInterval(function() {
+    if (didScroll) {
+        didScroll = false;
+        $(window).scroll(function() {
+            scroll = -((jQuery(window).scrollTop() / 3));
+            $(".scoll").each(function() {
+                translateY = scroll / $(this).data("scroll-speed");
+                translateY = +translateY.toFixed(2)
+                $(this).css('-webkit-transform', 'translateY(' + translateY + 'px)');
+
+            });
+        });
+    }
+}, 100);
 
 /*
 filedrag.js - HTML5 File Drag & Drop demonstration
@@ -276,6 +297,48 @@ var nodes = [
     { name: 'Input', row: 1, column: 1, connectsTo: 'Hidden Layer' },
     { name: 'Hidden Layer', row: 1, column: 8, connectsTo: 'Output' },
     { name: 'Output', row: 1, column: 15 }
+];
+
+// Draw the nodes!
+
+nodes.forEach(function(node) {
+
+    diagram.addNode({
+        name: node.name,
+        label: node.name,
+        row: node.row,
+        column: node.column
+    });
+
+});
+
+// Draw the links!
+
+nodes.forEach(function(node) {
+
+    if (!node.connectsTo)
+        return;
+
+    diagram.addLine({
+        from: node.name,
+        to: node.connectsTo
+    });
+
+});
+
+var diagram = new SimpleDiagram('#perceptron-2', {
+    addGrid: false,
+    cellSize: 35,
+    numColumns: 15,
+    numRows: 1,
+    margin: 50,
+    interactive: false
+});
+
+var nodes = [
+    { name: '2', row: 1, column: 1, connectsTo: '3' },
+    { name: '3', row: 1, column: 8, connectsTo: '6' },
+    { name: '6', row: 1, column: 15 }
 ];
 
 // Draw the nodes!

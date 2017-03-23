@@ -147,17 +147,15 @@ p {
 }
 
 .background-dots {
-    width: 100%;
+    width: 200vw;
     height: 100%;
-    background-attachment: fixed;
-    /*-webkit-animation: background 1s;*/
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     top: 0;
     position: fixed;
     background-size: 512px;
     opacity: 0.7;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .blue-block h1 {
@@ -254,6 +252,15 @@ p {
     }
     100% {
         background-position: -98% 50%
+    }
+}
+
+@keyframes background {
+    0% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(-100vw);
     }
 }
 
