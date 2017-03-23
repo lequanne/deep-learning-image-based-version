@@ -23,9 +23,9 @@ function moveStars() {
     scroll = -((jQuery(window).scrollTop() / 3));
     $(".scoll").each(function() {
         translateY = scroll / $(this).data("scroll-speed");
-        translateY = +translateY.toFixed(2)
+        translateY = +translateY.toFixed(0)
 
-        $(this).css('-webkit-transform', 'translateY(' + translateY + 'px)');
+        $(this).css('-webkit-transform', 'translate3d(0,' + translateY + 'px, 0)');
 
     });
 }

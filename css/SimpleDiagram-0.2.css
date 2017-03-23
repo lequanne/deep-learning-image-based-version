@@ -6,6 +6,7 @@ svg.simple-diagram .node .node-shape {
     stroke: none;
     fill: #fff;
     stroke-width: 1px;
+    cursor: help;
 }
 
 svg.simple-diagram .node .square {

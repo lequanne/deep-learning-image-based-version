@@ -156,18 +156,65 @@ p {
     position: fixed;
     background-size: 512px;
     opacity: 0.7;
+    /*animation-name: background;
+    animation-duration: 10s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear;*/
 }
 
-.blue-block h1 {
+.blue-block h1,
+.intro h1 {
     font-size: 1.3em;
     margin: 0;
     color: white;
     font-family: 'Lato', sans-serif;
     padding: 25px;
     letter-spacing: 0rem;
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    background: blue;
+    text-align: center;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*position: fixed;*/
+    position: relative;
+    top: 0;
+    animation: fadeOut 4s linear;
+    animation-fill-mode: forwards;
+}
+
+.intro .loading {
+    text-align: center;
+    margin: 1em 0;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 0.7rem;
+    width: 80vw;
+    color: blue;
+    border-color: #fff;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 203% 200%;
+    animation: AnimationName 3s ease;
+    animation-fill-mode: both;
+    padding: 0.3em 0;
+}
+
+.intro .loading:after {
+    animation: changeTransmission 3s linear;
+    animation-fill-mode: forwards;
+    display: block;
+    content: "";
 }
 
 .blue-block {
@@ -212,7 +259,7 @@ p {
     padding: 5em 0;
     margin: 1em 0;
     color: #fff;
-    border: 2px dashed #fff;
+    border: 1px dashed #fff;
     border-radius: 0px;
     cursor: default;
     transition: all 0.3s;
@@ -258,12 +305,48 @@ p {
     }
 }
 
-@keyframes background {
-    0% {
-        transform: translateX(0vw);
+@keyframes fadeOut {
+    80% {
+        opacity: 1;
+        visibility: visible;
+    }
+    99% {
+        opacity: 0;
+        visibility: visible;
     }
     100% {
-        transform: translateX(-100vw);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes changeTransmission {
+    0% {
+        content: "Receiving transmission from deep space";
+    }
+    60% {
+        color: blue;
+    }
+    75% {
+        color: #fff;
+        content: "Receiving transmission from deep space";
+    }
+    85% {
+        color: #fff;
+        content: "Transmission received";
+    }
+    100% {
+        color: blue;
+        content: "Transmission received";
+    }
+}
+
+@keyframes background {
+    0% {
+        background-position-X: 0px;
+    }
+    100% {
+        background-position-X: 512px;
     }
 }
 
@@ -302,6 +385,7 @@ button.secondary:hover {
 }
 
 .tooltip {
+    cursor: help;
     font-size: small;
     line-height: 1.4em;
     color: white;
