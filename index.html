@@ -26,80 +26,82 @@
 </head>
 
 <body>
-    <aside class="sidebar invert">
-        <div data-scroll="500" class="invert-dots"></div>
-    </aside>
-    <div id="menu" class="menu">
-        <div class="menu-icon" type="button"></div>
-    </div>
-    <div class="blue-block">
-        <h1>WELCOME TO THE DEEP SPACE TELESCOPE</h1>
-        <p>By using this telescope you will be able to peer into the oldest galaxies in the universe.
-        </p>
-        <p>Observations of deep space objects will beam directly back to you over your Internet connection.</p>
-    </div>
-    <div class="blue-block">
-        <h1>Machine learning:</h1>
-        <p>Transmissions from the telescope use a kind of Artificial Intelligence (AI) called machine learning. </p>
-        <p>Machine learning focuses on creating computer programs that can change when exposed to new data.</p>
-    </div>
-    <div class="blue-block">
-        <h1>Convolutional Neural Networks:</h1>
-        <p><strong>A Convolutional Neural Network (CNN)</strong> is a computer algorithm generally used for image recognition and classification.</p>
-        <p>Chances are you've already used CNN without even knowing it! <strong>Google</strong> uses an advanced neural network to power it's image search.</p>
-        <br>
-        <br>
-        <button class="secondary">What do they do?</button>
-        <button class="secondary">What are they used for?</button>
-    </div>
-    <div class="blue-block">
-        <h1>How do they work?</h1>
-        <p><strong>A Convolutional Neural Network</strong> is a specific type of <strong>Neural Network.</strong></p>
-        <p><strong>Neural Networks</strong> often start with little to no prior knowledge or assumptions about the data they classify, instead they are <i>trained</i> on a dataset where the answer is known, this is known as <strong>training.</strong> Once the have obtained a resonable level of accuracy they are givin new data where the end result is unknown.</p>
-        <br>
-        <br>
-        <button class="secondary">Learn more about training</button>
-    </div>
-    <div class="blue-block">
-        <h1>Nodes and links</h1>
-        <p><strong>Neural Networks</strong> are based on nodes and links. The simpliest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output. The <i>hidden layers</i> job is to transform the input in some way. This can be as simple as multiplication but is often far more complex</p>
-        <br>
-        <br>
-        <div id="perceptron-1"></div>
-        <p><strong>Neural Networks</strong> are based on nodes and links. The simpliest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output. The <i>hidden layers</i> job is to transform the input in some way. This can be as simple as multiplication but is often far more complex</p>
-        <br>
-        <br>
-        <div id="perceptron-2"></div>
-    </div>
-    <div class="blue-block">
-        <h1>Are you ready to receive a transmission from deep space?</h1>
-        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <div>
-                    <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-                    <div id="filedrag">Drop image file here</div>
-                </div>
-                <div id="submitbutton">
-                    <button type="submit">Upload Files</button>
-                </div>
-            </fieldset>
-        </form>
-        <div id="messages">
+    <div class="wrap">
+        <aside class="sidebar invert">
+            <div data-scroll="500" class="invert-dots"></div>
+        </aside>
+        <div id="menu" class="menu">
+            <div class="menu-icon" type="button"></div>
         </div>
+        <div class="blue-block">
+            <h1>WELCOME TO THE DEEP SPACE TELESCOPE</h1>
+            <p>By using this telescope you will be able to peer into the oldest galaxies in the universe.
+            </p>
+            <p>Observations of deep space objects will beam directly back to you over your Internet connection.</p>
+        </div>
+        <div class="blue-block">
+            <h1>Machine learning:</h1>
+            <p>Transmissions from the telescope use a kind of Artificial Intelligence (AI) called machine learning. </p>
+            <p>Machine learning focuses on creating computer programs that can change when exposed to new data.</p>
+        </div>
+        <div class="blue-block">
+            <h1>Convolutional Neural Networks:</h1>
+            <p><strong>A Convolutional Neural Network (CNN)</strong> is a computer algorithm generally used for image recognition and classification.</p>
+            <p>Chances are you've already used CNN without even knowing it! <strong>Google</strong> uses an advanced neural network to power it's image search.</p>
+            <br>
+            <br>
+            <button class="secondary">What do they do?</button>
+            <button class="secondary">What are they used for?</button>
+        </div>
+        <div class="blue-block">
+            <h1>How do they work?</h1>
+            <p><strong>A Convolutional Neural Network</strong> is a specific type of <strong>Neural Network.</strong></p>
+            <p><strong>Neural Networks</strong> often start with little to no prior knowledge or assumptions about the data they classify, instead they are <i>trained</i> on a dataset where the answer is known, this is known as <strong>training.</strong> Once the have obtained a resonable level of accuracy they are givin new data where the end result is unknown.</p>
+            <br>
+            <br>
+            <button class="secondary">Learn more about training</button>
+        </div>
+        <div class="blue-block">
+            <h1>Nodes and links</h1>
+            <p><strong>Neural Networks</strong> are based on nodes and links. The simpliest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output. The <i>hidden layers</i> job is to transform the input in some way. This can be as simple as multiplication but is often far more complex</p>
+            <br>
+            <br>
+            <div id="perceptron-1"></div>
+            <p><strong>Neural Networks</strong> are based on nodes and links. The simpliest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output. The <i>hidden layers</i> job is to transform the input in some way. This can be as simple as multiplication but is often far more complex</p>
+            <br>
+            <br>
+            <div id="perceptron-2"></div>
+        </div>
+        <div class="blue-block">
+            <h1>Are you ready to receive a transmission from deep space?</h1>
+            <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <div>
+                        <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                        <div id="filedrag">Drop image file here</div>
+                    </div>
+                    <div id="submitbutton">
+                        <button type="submit">Upload Files</button>
+                    </div>
+                </fieldset>
+            </form>
+            <div id="messages">
+            </div>
+        </div>
+        <div class="clear-block">
+            <div id="chart"></div>
+        </div>
+        <div class="blue-block">
+            <h1>Classification:/final result</h1>
+        </div>
+        <div class="blue-block">
+            <h1>Would you like to receive another transmission?</h1>
+        </div>
+        <div class="fade-in-black"></div>
+        <div data-scroll-speed="5" style="background-image: url(img/stars-small.svg);" class="background-dots scoll"></div>
+        <div data-scroll-speed="3" style="background-image: url(img/stars-med.svg)" class="background-dots scoll"></div>
+        <div data-scroll-speed="2" style="background-image: url(img/stars-large.svg);" class="background-dots scoll"></div>
     </div>
-    <div class="clear-block">
-        <div id="chart"></div>
-    </div>
-    <div class="blue-block">
-        <h1>Classification:/final result</h1>
-    </div>
-    <div class="blue-block">
-        <h1>Would you like to receive another transmission?</h1>
-    </div>
-    <div class="fade-in-black"></div>
-    <div data-scroll-speed="5" style="background-image: url(img/stars-small.svg);" class="background-dots scoll"></div>
-    <div data-scroll-speed="3" style="background-image: url(img/stars-med.svg)" class="background-dots scoll"></div>
-    <div data-scroll-speed="2" style="background-image: url(img/stars-large.svg);" class="background-dots scoll"></div>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')

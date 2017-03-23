@@ -15,17 +15,20 @@ function doThisStuffOnScroll() {
 setInterval(function() {
     if (didScroll) {
         didScroll = false;
-        $(window).scroll(function() {
-            scroll = -((jQuery(window).scrollTop() / 3));
-            $(".scoll").each(function() {
-                translateY = scroll / $(this).data("scroll-speed");
-                translateY = +translateY.toFixed(2)
-                $(this).css('-webkit-transform', 'translateY(' + translateY + 'px)');
-
-            });
-        });
+        window.requestAnimationFrame(moveStars)
     }
-}, 100);
+}, 30);
+
+function moveStars() {
+    scroll = -((jQuery(window).scrollTop() / 3));
+    $(".scoll").each(function() {
+        translateY = scroll / $(this).data("scroll-speed");
+        translateY = +translateY.toFixed(2)
+
+        $(this).css('-webkit-transform', 'translateY(' + translateY + 'px)');
+
+    });
+}
 
 /*
 filedrag.js - HTML5 File Drag & Drop demonstration
