@@ -273,9 +273,9 @@ var diagram = new SimpleDiagram('#perceptron-1', {
 });
 
 var nodes = [
-    { name: 'A', row: 1, column: 1, connectsTo: 'B' },
-    { name: 'B', row: 1, column: 8, connectsTo: 'C' },
-    { name: 'C', row: 1, column: 15 }
+    { name: 'Input', row: 1, column: 1, connectsTo: 'Hidden Layer' },
+    { name: 'Hidden Layer', row: 1, column: 8, connectsTo: 'Output' },
+    { name: 'Output', row: 1, column: 15 }
 ];
 
 // Draw the nodes!
