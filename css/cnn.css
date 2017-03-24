@@ -528,7 +528,7 @@ button.secondary:hover {
     position: absolute;
     z-index: 1;
     top: -5px;
-    left: 105%;
+    left: 0%;
     font-weight: 300;
 }
 
