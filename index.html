@@ -95,26 +95,28 @@
             <p><strong>Neural Networks</strong> are based on nodes and links. The simplest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output. The <i>hidden layers</i> job is to transform the input in some way. This can be as simple as multiplication but is often far more complex</p>
             <div id="perceptron-2"></div>
         </div>
-        <div class="blue-block">
-            <h1>Are you ready to receive a transmission from deep space?</h1>
-            <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
-                <fieldset>
-                    <div>
-                        <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-                        <div id="filedrag">Drop image file here</div>
-                    </div>
-                    <div id="submitbutton">
-                        <button type="submit">Upload Files</button>
-                    </div>
-                </fieldset>
-            </form>
-            <div id="messages">
+        <div id="scale-block" class="blue-block">
+            <div id="hide-chart">
+                <h1>Are you ready to receive a transmission from deep space?</h1>
+                <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+                    <fieldset>
+                        <div>
+                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                            <div id="filedrag">Drop image file here</div>
+                        </div>
+                        <div id="submitbutton">
+                            <button type="submit">Upload Files</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="messages">
+                </div>
             </div>
-        </div>
-        <div class="blue-block">
-            <h1>Moonfish</h1>
-            <p>Constellation</p>
-            <div id="chart"></div>
+            <div id="show-chart">
+                <h1>Moonfish</h1>
+                <p>Constellation</p>
+                <div id="chart"></div>
+            </div>
         </div>
         <div class="blue-block">
             <h1>Classification:/final result</h1>

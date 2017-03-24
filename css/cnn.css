@@ -352,6 +352,15 @@ p {
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes changeTransmission {
     0% {
         content: "Receiving transmission from deep space";
@@ -408,12 +417,41 @@ button.secondary:hover {
     color: blue;
 }
 
+#show-chart {
+    animation: fadeIn 0.3s linear;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
 #chart {
     width: 100%;
 }
 
 #chart line {
     stroke-dasharray: 5, 5
+}
+
+#chart circle {
+    /*animation: scale 3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-fill-mode: both;*/
+    transition: transform 0.3s ease;
+}
+
+#chart circle:hover {
+    transform: scale(2)
+}
+
+#chart circle:active {
+    transform: scale(1.7)
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0)
+    }
+    100% {
+        transform: scale(1)
+    }
 }
 
 .tooltip {

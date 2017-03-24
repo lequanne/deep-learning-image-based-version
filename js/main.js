@@ -89,6 +89,21 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
             );
 
             d.innerHTML = "Ready";
+            $('#filedrag.uploaded').click(function() {
+                $('#hide-chart').animate({
+                    opacity: "0"
+                }, "300", function() {
+                    $('#scale-block').animate({
+                        height: "531px"
+                    }, "slow", function() {
+                        $('#hide-chart').hide()
+                        $('#show-chart').show()
+                    })
+                })
+
+
+            });
+
         }, 3000);
     }
 
@@ -129,7 +144,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 
 
 //D3 
-
+$('#show-chart').hide()
 var w = 400,
     h = 400;
 
@@ -158,12 +173,12 @@ var palette = {
 }
 
 var nodes = [
-    { name: "Parent" },
-    { name: "child1" },
-    { name: "child2", target: [0] },
-    { name: "child3", target: [0] },
-    { name: "child4", target: [1] },
-    { name: "child5", target: [0, 1, 2, 3] }
+    { name: "1", target: [1, 2], px: 101, py: 175, fixed: true },
+    { name: "2", target: [3, 5], px: 154, py: 111, fixed: true },
+    { name: "3", target: [4, 5], px: 171, py: 239, fixed: true },
+    { name: "4", px: 215, py: 74, fixed: true },
+    { name: "5", px: 221, py: 263, fixed: true },
+    { name: "6", px: 291, py: 164, fixed: true }
 ];
 
 var links = [];
@@ -226,24 +241,15 @@ force.on('tick', function(e) {
             return d.target.y
         })
 })
+force.start();
 
-//http://imakewebthings.com/waypoints/guides/getting-started/
+/*http://imakewebthings.com/waypoints/guides/getting-started/
 $('#chart').waypoint(function() {
     force.start();
 }, {
     offset: '70%'
 });
-
-
-$('#filedrag').click(function() {
-
-    disable_scroll();
-
-    $('html, body').stop().animate({ scrollTop: $("#chart").offset().top - 200 }, 700, function() {
-        enable_scroll();
-    });
-});
-
+*/
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -370,6 +376,6 @@ nodes.forEach(function(node) {
 
 });
 
-$( ".slider-control" ).click(function() {
-  $(this).parent().toggleClass( "slid" )
+$(".slider-control").click(function() {
+    $(this).parent().toggleClass("slid")
 });
