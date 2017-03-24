@@ -230,7 +230,7 @@ p {
 .blue-block .slider {
     display: -webkit-box;
     overflow-x: hidden;
-    height: 80vh;
+    max-height: 80vh;
 }
 
 .slider-control {

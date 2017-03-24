@@ -94,7 +94,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
                     opacity: "0"
                 }, "300", function() {
                     $('#scale-block').animate({
-                        height: "531px"
+                        height: "580px"
                     }, "slow", function() {
                         $('#hide-chart').hide()
                         $('#show-chart').show()
@@ -146,7 +146,7 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 //D3 
 $('#show-chart').hide()
 var w = 400,
-    h = 400;
+    h = 300;
 
 var circleWidth = 5;
 
