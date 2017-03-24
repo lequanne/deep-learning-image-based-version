@@ -230,11 +230,12 @@ p {
 .blue-block .slider {
     display: -webkit-box;
     overflow-x: hidden;
+    height: 80vh;
 }
 
 .slider-control {
     position: absolute;
-    border: 3px;
+    border: 2px;
     border-style: dotted solid;
     border-color: white;
     background-color: transparent;
@@ -244,8 +245,8 @@ p {
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius: 100px;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    top: 5px;
     font-size: 15px;
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
@@ -255,7 +256,7 @@ p {
     -moz-transition-property: -moz-transform;
     -o-transition-property: -o-transform;
     transition-property: transform;
-    transform: rotate(0deg);
+    transform: scale(0.8)rotate(0deg);
     transition-timing-function: cubic-bezier(0.09, 0.99, 0.24, 1);
 }
 
@@ -278,7 +279,7 @@ p {
 }
 
 .slid .slider-control {
-    transform: rotate(90deg);
+    transform: scale(0.8)rotate(90deg);
 }
 
 .slid .slider-control:after {
@@ -293,6 +294,8 @@ p {
 .blue-block .slider .slide {
     display: block;
     transition: transform 0.3s cubic-bezier(0.88, 0.35, 0.7, 0.74);
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .blue-block .slider.slid .slide {
