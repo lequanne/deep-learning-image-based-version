@@ -76,7 +76,7 @@
                     <h1>Convolution</h1>
                     <p>Unlike humans, machines are unable to distinguish hierarchy or conceptual structure. Therefore, the first step in a CNN is a convolutional layer. The convolutional layer is a proportionate sample of the input, used to inspect quantifiable objects such as pixels or colours.</p>
                     <p>Let’s say our training data is based on differentiating between stars and planets in the sky. Convolution can be compared to a telescope that scans the night sky, selecting parts that overlap. Occasionally, there will be dark space with no objects. A human can distinguish some elements from others, while a machine can only process an average of the data. Convolution enables the neural network to develop a hierarchy and distinguish objects from one another.</p>
-                    <img style="filter: grayscale(100)contrast(100)invert(1);" src="img/ezgif.com-crop.gif">
+                    <img src="img/ezgif.com-crop.gif">
                 </div>
                 <div class="slide">
                     <h1>Convolution</h1>
@@ -96,12 +96,14 @@
             <h1>Pool - ReLu / Activation Layer</h1>
             <p>The purpose of these downsampled layers is to allow the neural network to process images in a nonlinear way, allowing for faster processing speeds. When the program is trying to predict an image of a planet, the pooling layers will have high values that represent high level features like colour, surface, or rings. However, if it is predicting a star, it might have high level features like brightness or size.
             </p>
+            <img src="img/pooling.gif">
         </div>
         <div class="blue-block">
             <div class="slider-control"></div>
             <h1>Fully Connected / Output / Classification + The Artist Hand</h1>
             <p>The fully connected layer is the last layer before the CNN is able to make a prediction. This layer takes an input volume of the last pooling layer and outputs a vector based on the number of classes the program has to choose from. This layer ensures that an adequate prediction can be made, compared to previous pooled layers, because it correlates the high level features from pooled layers with the weights, based off the trained data.
             </p>
+            <img width="250px" src="img/fully_connected.svg">
         </div>
         <div id="scale-block" class="blue-block">
             <div id="hide-chart">
