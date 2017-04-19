@@ -36,69 +36,33 @@
         </div>
         <div class="blue-block">
             <h1>WELCOME TO THE DEEP SPACE TELESCOPE</h1>
-            <p>This telescope will allow you to peer into the oldest galaxies in the universe.</p>
-            <p>Observations of deep space objects will beam directly back to Earth over your Internet connection. Molecular clouds, galactic winds and star formations may be visible to you through transmissions sent from the telescope.</p>
-            <p>Transmissions from the telescope use a kind of Artificial Intelligence (AI) called machine learning. Machine learning focuses on creating computer programs that can change when exposed to new data.
-            </p>
         </div>
         <div class="blue-block">
             <div class="slider">
                 <div class="slider-control"></div>
                 <div class="slide">
-                    <h1>Convolutional Neural Networks:</h1>
-                    <p><strong>A Convolutional Neural Network (CNN)</strong> is a computer algorithm generally used for image recognition and classification.</p>
-                    <p>Chances are you've <i>already</i> used CNN
-                        <span class="tooltip">without even knowing it!
-                    <span class="tooltiptext">If you have used Google Images, Apple’s Siri, Skype’s translation function, Netflix’s recommendations, Amazon’s suggestions, or Microsoft’s Cortana you are already using a neural network in your everyday life.</span>
-                        </span>
-                        <p> Computers do not know how to reason like humans do. They are, as the name suggests, computing machines and solve problems only with numbers and rules, not ideas and concepts. As result, they need to study our patterns of using a service in order to learn ideas and concepts that we as humans understand. </p>
-                        <p>This model, a neural network, translates our usage into data it understands and then run tests which allows us to use the data meaningfully in the use cases mentioned above. Over time the neural network grows as our usage creates a large dataset for the computer to learn from and produce better results for what it is programmed to do. This is why the more you watch Netflix, the better and more accurate the recommendations are.
-                        </p>
-                        <br>
-                        <br>
-                        <button class="secondary">How do they work?</button>
-                        <button class="secondary">What are they used for?</button>
-                </div>
+                    <h1>Convolutional Neural Networks (CNN)</h1>
+                    <h2><strong>A Convolutional Neural Network</strong> is a specific type of <strong>Neural Network.</strong></h2>
+                  </div>
                 <div class="slide">
                     <h1>In Real Life</h1>
                     <p><b>Google Images</b>
                         <br> Search images based on your description and Google Images recognizes content in the images. This is how SafeSearch can distinguish inappropriate content in images. </p>
                     <p>
-                    </p>
                     <p>
                         <b>Apple’s Siri</b>
                         <br> A personal assistant embedded in the Apple phone since the iOS 5, which learns your preferences over time.
                     </p>
                     <p>
-                        <b>Skype’s translation function</b>
-                        <br> Translates speech between two interlocutors, in over 40 languages, in real-time over Skype. (for refererence, since not everyone knows about this
-                        <https://www.technologyreview.com/s/534101/something-lost-in-skype-translation/>)
-                    </p>
-                    <p>
                         <b>Netflix’s recommendations</b>
                         <br> Predicts films and television shows you may prefer based on your viewing history.
-                    </p>
-                    <p>
-                        <b>Amazon’s suggestions</b>
-                        <br> Provides merchandise suggestions based on your shopping patterns and saved lists.
-                    </p>
-                    <p>
-                        <b>Microsoft’s Cortana</b>
-                        <br> A personal assistant embedded in Microsoft 10 OS, which learns your preferences over time.
                     </p>
                 </div>
             </div>
         </div>
-        <div class="blue-block">
-            <h1>How do they work?</h1>
-            <p><strong>A Convolutional Neural Network</strong> is a specific type of <strong>Neural Network.</strong></p>
-            <p><strong>Neural Networks</strong> often start with little to no prior knowledge or assumptions about the data they classify, instead they are <i>trained</i> on a dataset where the answer is known, this is known as <strong>training.</strong> Once the have obtained a reasonable level of accuracy they are given new data where the end result is unknown.</p>
-        </div>
-        <div class="blue-block">
+          <div class="blue-block">
             <h1>Nodes and links</h1>
-            <p><strong>Neural Networks</strong> are based on nodes and links. The simplest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output.</p>
             <div id="perceptron-1"></div>
-            <p><strong>Neural Networks</strong> are based on nodes and links. The simplest neural network <i>(a perceptron)</i> can be shown as 3 nodes, the input the <i>hidden layer</i> and the output. The <i>hidden layers</i> job is to transform the input in some way. This can be as simple as multiplication but is often far more complex</p>
             <div id="perceptron-2"></div>
         </div>
         <div class="blue-block">
@@ -106,14 +70,10 @@
                 <div class="slider-control"></div>
                 <div class="slide">
                     <h1>Convolution</h1>
-                    <p>Unlike humans, machines are unable to distinguish hierarchy or conceptual structure. Therefore, the first step in a CNN is a convolutional layer. The convolutional layer is a proportionate sample of the input, used to inspect quantifiable objects such as pixels or colours.</p>
-                    <p>Let’s say our training data is based on differentiating between stars and planets in the sky. Convolution can be compared to a telescope that scans the night sky, selecting parts that overlap. Occasionally, there will be dark space with no objects. A human can distinguish some elements from others, while a machine can only process an average of the data. Convolution enables the neural network to develop a hierarchy and distinguish objects from one another.</p>
                     <img src="img/ezgif.com-crop.gif">
                 </div>
                 <div class="slide">
                     <h1>Convolution</h1>
-                    <p>The input is a 32 x 32 x 3 array of pixel values. Now, picture the convolutional layer as a telescope that is looking into the top left of the sky. Let’s say that the telescope’s lens covers a 5 x 5 area. Now, let’s imagine this telescope sliding across all the areas of the input image. The telescope, now known as the filter, is also an array of numbers that are called weights or parameters. For the math to work, the depth of this filter has to be the same as the depth of the input, so the dimensions of this filter are 5 x 5 x 3. Now, let’s consider the first position the filter is in for example. It would be the top left corner. As the filter is sliding, or convolving, around the input image, it is multiplying the values in the filter with the original pixel values of the image. These multiplications are all summed up (75 multiplications in total). Now you have a single number. Remember, this number is just representative of when the filter is at the top left of the image. Now, repeat this process for every location on the input volume. Next step would be moving the filter to the right by 1 unit, then again by 1 unit, until the entire image is convolved. Every unique location on the input volume produces a number. After moving the filter over all the locations, you will find out that what you’re left with is a 28 x 28 x 1 array of numbers, which we call pooling. The reason you get a 28 x 28 array is that there are 784 different locations that a 5 x 5 filter can fit on a 32 x 32 input image. These 784 numbers are mapped to a 28 x 28 array.
-                    </p>
                 </div>
             </div>
         </div>
@@ -121,14 +81,11 @@
             <div class="slider-control"></div>
             <h1>Filters</h1>
             <img width="90px" src="img/filters.svg">
-            <p>The telescope itself is what would be called a filter, and the region it is peering into is called the receptive field. The filter is also a set of numbers, called weights. As the filter convolves -- that is, slides over the input -- it is performing multiplications that can be averaged into a single number. After processing the entire image, the CNN is left with a downsampled pooling layer. </p>
         </div>
         <div class="blue-block">
             <div class="slider-control"></div>
             <h1>Pool - ReLu / Activation Layer</h1>
-            <p>The purpose of these downsampled layers is to allow the neural network to process images in a nonlinear way, allowing for faster processing speeds. When the program is trying to predict an image of a planet, the pooling layers will have high values that represent high level features like colour, surface, or rings. However, if it is predicting a star, it might have high level features like brightness or size.
-            </p>
-            <img src="img/pooling.gif">
+           <img src="img/pooling.gif">
         </div>
         <div class="blue-block">
             <div class="slider-control"></div>
